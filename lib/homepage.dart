@@ -8,13 +8,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.2,
-        title: Text("Saullll Jimenez "),
+        title: Text("Saul Jimenez"),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 233, 166, 22),
+        backgroundColor: const Color.fromARGB(255, 219, 180, 9),
         actions: <Widget>[
           InkWell(
             onTap: null,
-            child: new IconButton(
+            child: IconButton(
               icon: Icon(
                 Icons.search,
                 color: const Color.fromARGB(255, 0, 0, 0),
@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
           ),
           InkWell(
             onTap: null,
-            child: new IconButton(
+            child: IconButton(
               icon: Icon(
                 Icons.settings,
                 color: const Color.fromARGB(255, 0, 0, 0),
@@ -32,45 +32,80 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      drawer: Drawer(
+     drawer: Drawer(
+      child: ListView(
+        children: [
 
-        child: ListView(
-          children: [
-            UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: const Color.fromARGB(255, 16, 149, 211)),
+          UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: const Color.fromARGB(255, 235, 114, 22)),
               accountName: Text("Saul Jimenez No 1222"),
-              accountEmail: Text("saul89496@gmail.com"),
-                 currentAccountPicture: GestureDetector(
-                 child: CircleAvatar(
-                  backgroundColor: const Color.fromARGB(255, 178, 22, 218),
-                   radius: 130,
-           
+              accountEmail: Text("a.22308051281222@cbtis128.edu.mx"),
+
+              currentAccountPicture: GestureDetector(
+                child: CircleAvatar(
+                  backgroundColor: const Color.fromARGB(255, 210, 100, 17),
+                  child: CircleAvatar(
+            radius: 130,
+            backgroundColor: Colors.red,
             child: CircleAvatar(
               radius: 120,
               backgroundImage: NetworkImage(
-                  'https://raw.githubusercontent.com/sauljimenez24/UIIIacitivdad2/refs/heads/main/neymar.jpg'),
+                  'https://raw.githubusercontent.com/sauljimenez24/IMG_ACT4/refs/heads/main/ney_perfil.jpg'),
+
             ),
           ),
-                ),
-
+                  ),
               ),
-              InkWell(
+            ),
+             InkWell(
               onTap: (){},
               child: ListTile(
                 onTap: (){Navigator.popAndPushNamed(context, "/home");},
-                leading: Icon(Icons.home, color: const Color.fromARGB(255, 235, 147, 15)),
-                title: Text("Home Page"),
+                leading: Icon(Icons.home, color: const Color.fromARGB(255, 37, 108, 183)),
+                title: Text("Pagina Inicio"),
               ),
             ),
-            
-            
-
-            
-            
+            InkWell(
+              onTap: null,
+              child: ListTile(
+                onTap: (){Navigator.popAndPushNamed(context, "/perfil");},
+                leading: Icon(Icons.person, color: Colors.black),
+                title: Text("Perfil"),
+              ),
+            ),
+             InkWell(
+              onTap: null,
+              child: ListTile(
+                onTap: (){Navigator.pushNamed(context, "/refacciones");},
+                leading: Icon(Icons.shopping_basket, color: Colors.red),
+                title: Text("Refacciones"),
+              ),
+            ),
+             Divider(),
+            InkWell(
+              onTap: null,
+              child: ListTile(
+                leading: Icon(Icons.help, color: Colors.green),
+                title: Text("About"),
+              ),
+            ),
+            InkWell(
+              onTap: null,
+              child: ListTile(
+                leading: Icon(
+                  Icons.power_settings_new,
+                  color: Colors.black,
+                ),
+                title: Text("Log out"),
+              ),
+            )
           ],
         ),
-
+      ),
+          body: Center(
+        child: Text("Home Page"),
       ),
     );
   }
-}
+}   
+            
